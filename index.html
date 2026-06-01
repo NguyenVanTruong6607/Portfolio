@@ -43,9 +43,8 @@
             -moz-osx-font-smoothing:grayscale;
         }
 
-        /* subtle animated blobs to create 'liquid' feel */
         .liquid-blob {
-            display: none; /* hidden when using white background */
+            display: none;
         }
 
         .liquid-blob.right { right: -80px; top: 20%; }
@@ -62,13 +61,11 @@
             margin: 0 auto;
             padding: 0 20px;
             position: relative;
-            z-index: 2; /* above overlay */
+            z-index: 2;
         }
 
-        /* Full-screen translucent glass overlay to create transparent liquid glass effect */
         .liquid-overlay { display: none; }
 
-        /* Header */
         header {
             background: linear-gradient(135deg, rgba(5, 18, 40, 0.5), rgba(10, 30, 70, 0.5)), url('ai-brain.png');
             background-size: cover;
@@ -167,7 +164,6 @@
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
         }
 
-        /* Navigation */
         nav {
             background: linear-gradient(135deg, rgba(5, 15, 35, 0.92), rgba(10, 25, 50, 0.92));
             backdrop-filter: blur(16px);
@@ -218,7 +214,6 @@
             width: 100%;
         }
 
-        /* Main Content */
         main {
             background: rgba(6, 12, 28, 0.92);
             margin-top: 0;
@@ -301,7 +296,6 @@
             font-weight: 600;
         }
 
-        /* Introduction Section */
         .intro-content {
             display: grid;
             grid-template-columns: 240px 1fr;
@@ -385,7 +379,6 @@
             text-align: center;
         }
 
-        /* Accordion Styles */
         .accordion-container {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -498,7 +491,6 @@
             background: rgba(12, 20, 38, 0.92);
         }
 
-        /* Glass/card style used for previously white backgrounds */
         .glass {
             background: rgba(12, 20, 38, 0.92);
             border: 1px solid rgba(120,160,255,0.16);
@@ -546,7 +538,6 @@
             font-size: 1.38rem;
         }
 
-        /* Projects/Assignments Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -676,7 +667,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px;
@@ -698,7 +688,6 @@
             margin: 15px 0;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.2rem;
@@ -789,7 +778,6 @@
             }
         }
 
-        /* Page Navigation */
         .pages-container {
             min-height: calc(100vh - 500px);
             position: relative;
@@ -818,63 +806,6 @@
             padding: 40px 0;
             margin-top: 40px;
             border-top: 2px solid var(--border-color);
-        }
-
-        .loading-overlay {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(0, 255, 255, 0.08), transparent 40%),
-                        radial-gradient(circle at 70% 80%, rgba(0, 153, 255, 0.1), transparent 45%),
-                        rgba(2, 8, 20, 0.85);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            backdrop-filter: blur(6px);
-        }
-
-        .loading-overlay.active {
-            display: flex;
-        }
-
-        .loading-panel {
-            border: 1px solid rgba(0, 255, 255, 0.35);
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.25), inset 0 0 20px rgba(0, 255, 255, 0.08);
-            padding: 28px 36px;
-            border-radius: 12px;
-            background: rgba(6, 14, 30, 0.85);
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .loading-ring {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            border: 2px solid rgba(0, 255, 255, 0.2);
-            border-top-color: #00ffff;
-            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
-            animation: spin 1.1s linear infinite;
-        }
-
-        .loading-text {
-            font-size: 0.95rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #d9f6ff;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.35);
-        }
-
-        .loading-subtext {
-            font-size: 0.75rem;
-            color: rgba(179, 217, 255, 0.8);
-            letter-spacing: 1px;
-            margin-top: 6px;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
 
         .pagination-btn {
@@ -950,424 +881,410 @@
             </ul>
         </div>
     </nav>
-     <div class="loading-overlay" id="loadingOverlay" aria-live="polite" aria-busy="true">
-        <div class="loading-panel" role="status">
-            <div class="loading-ring" aria-hidden="true"></div>
-            <div>
-                <div class="loading-text">Loading Assets</div>
-                <div class="loading-subtext">Initializing Page 2</div>
-            </div>
-        </div>
-    </div>
-
-   
 
     <!-- Main Content -->
     <main>
         <div class="pages-container">
             <!-- Page 1: Introduction -->
             <div class="page active" id="page-1">
-                <!-- Introduction Section -->
                 <section id="introduction">
-            <blockquote class="intro-quote">
-                Tổng hợp các kỹ năng, kiến thức và dự án học tập từ các môn học khác nhau. Đây là nơi trình bày những bài tập đã hoàn thành và các bài học quý báu.
-            </blockquote>
-            <h2>Giới Thiệu Bản Thân</h2>
-            <div class="intro-content">
-                <img src="picture.png" alt="Avatar" class="intro-image">
-                <div class="intro-text">
-                    <h3>Tôi là ai?</h3>
-                    <p>
-                        Xin chào, tôi là <strong>Nguyễn Văn Trường (25022039)</strong> – sinh viên ngành Khoa học Máy tính, trường Đại học Công Nghệ-ĐHQGHN, với tư duy đổi mới và định hướng ứng dụng thực tế. Đối với tôi, công nghệ không chỉ là lý thuyết trên trang giấy mà là công cụ mạnh mẽ để giải quyết các bài toán thực tiễn. Vì vậy, tôi luôn chú trọng việc chuyển hóa kiến thức giảng đường thành các giải pháp cụ thể thông qua từng bài tập dự án.
-                    </p>
-                    <p>
-                        Thời gian qua, tôi đã tập trung xây dựng nền tảng tư duy logic vững chắc và làm chủ các kỹ năng cốt lõi: từ tối ưu hóa cấu trúc dữ liệu, vận hành công cụ cộng tác nhóm, đến nghiên cứu ứng dụng AI tạo sinh một cách có trách nhiệm. Mỗi thử thách đều là cơ hội để tôi rèn luyện phong cách làm việc kỷ luật, chuyên nghiệp và có hệ thống.
-                    </p>
-                    <p>
-                        Với tinh thần của một "Lifelong Learner", tôi luôn nhạy bén với các xu hướng mới và không ngại bước ra khỏi vùng an toàn. Tôi tin rằng sự kết hợp giữa tư duy phân tích hệ thống và năng lực tự học chủ động sẽ giúp tôi thích ứng nhanh chóng trong kỷ nguyên số.
-                    </p>
-                    <p>
-                        Portfolio này không chỉ là tập hợp các bài báo cáo học thuật, mà là minh chứng sống động phản ánh năng lực thực hành, kỹ năng phối hợp và tư duy kỹ thuật của tôi. Đây là những bước đi đầu tiên trên hành trình khẳng định giá trị, sẵn sàng mang tinh thần trách nhiệm này đóng góp vào các dự án công nghệ tương lai.
-                    </p>
-                </div>
-                <div class="intro-right-section">
-                    <div class="highlights">
-                        <span class="badge">🔧 Kỹ năng thực hành</span>
-                        <span class="badge">🤝 Tinh thần hợp tác</span>
-                        <span class="badge">💪 Quyết tâm học hỏi</span>
-                        <span class="badge">🚀 Sáng tạo & Cải tiến</span>
-                    </div>
-                    <div class="info-box">
-                        <h4>ℹ️ Thông Tin Cá Nhân</h4>
-                        <div class="info-grid">
-                            <div class="info-item">
-                                <strong>👤 Tên:</strong>
-                                Nguyễn Văn Trường
+                    <blockquote class="intro-quote">
+                        Tổng hợp các kỹ năng, kiến thức và dự án học tập từ các môn học khác nhau. Đây là nơi trình bày những bài tập đã hoàn thành và các bài học quý báu.
+                    </blockquote>
+                    <h2>Giới Thiệu Bản Thân</h2>
+                    <div class="intro-content">
+                        <img src="picture.png" alt="Avatar" class="intro-image">
+                        <div class="intro-text">
+                            <h3>Tôi là ai?</h3>
+                            <p>
+                                Xin chào, tôi là <strong>Nguyễn Văn Trường (25022039)</strong> – sinh viên ngành Khoa học Máy tính, trường Đại học Công Nghệ-ĐHQGHN, với tư duy đổi mới và định hướng ứng dụng thực tế. Đối với tôi, công nghệ không chỉ là lý thuyết trên trang giấy mà là công cụ mạnh mẽ để giải quyết các bài toán thực tiễn. Vì vậy, tôi luôn chú trọng việc chuyển hóa kiến thức giảng đường thành các giải pháp cụ thể thông qua từng bài tập dự án.
+                            </p>
+                            <p>
+                                Thời gian qua, tôi đã tập trung xây dựng nền tảng tư duy logic vững chắc và làm chủ các kỹ năng cốt lõi: từ tối ưu hóa cấu trúc dữ liệu, vận hành công cụ cộng tác nhóm, đến nghiên cứu ứng dụng AI tạo sinh một cách có trách nhiệm. Mỗi thử thách đều là cơ hội để tôi rèn luyện phong cách làm việc kỷ luật, chuyên nghiệp và có hệ thống.
+                            </p>
+                            <p>
+                                Với tinh thần của một "Lifelong Learner", tôi luôn nhạy bén với các xu hướng mới và không ngại bước ra khỏi vùng an toàn. Tôi tin rằng sự kết hợp giữa tư duy phân tích hệ thống và năng lực tự học chủ động sẽ giúp tôi thích ứng nhanh chóng trong kỷ nguyên số.
+                            </p>
+                            <p>
+                                Portfolio này không chỉ là tập hợp các bài báo cáo học thuật, mà là minh chứng sống động phản ánh năng lực thực hành, kỹ năng phối hợp và tư duy kỹ thuật của tôi. Đây là những bước đi đầu tiên trên hành trình khẳng định giá trị, sẵn sàng mang tinh thần trách nhiệm này đóng góp vào các dự án công nghệ tương lai.
+                            </p>
+                        </div>
+                        <div class="intro-right-section">
+                            <div class="highlights">
+                                <span class="badge">🔧 Kỹ năng thực hành</span>
+                                <span class="badge">🤝 Tinh thần hợp tác</span>
+                                <span class="badge">💪 Quyết tâm học hỏi</span>
+                                <span class="badge">🚀 Sáng tạo & Cải tiến</span>
                             </div>
-                            <div class="info-item">
-                                <strong>🆔 Mã SV:</strong>
-                                25022039
-                            </div>
-                            <div class="info-item">
-                                <strong>🎓 Khóa:</strong>
-                                Năm nhất
-                            </div>
-                            <div class="info-item">
-                                <strong>💻 Ngành:</strong>
-                                Khoa Học Máy Tính
-                            </div>
-                            <div class="info-item">
-                                <strong>🏫 Trường:</strong>
-                                Đại học Công Nghệ - Đại học Quốc gia Hà Nội
+                            <div class="info-box">
+                                <h4>ℹ️ Thông Tin Cá Nhân</h4>
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <strong>👤 Tên:</strong>
+                                        Nguyễn Văn Trường
+                                    </div>
+                                    <div class="info-item">
+                                        <strong>🆔 Mã SV:</strong>
+                                        25022039
+                                    </div>
+                                    <div class="info-item">
+                                        <strong>🎓 Khóa:</strong>
+                                        Năm nhất
+                                    </div>
+                                    <div class="info-item">
+                                        <strong>💻 Ngành:</strong>
+                                        Khoa Học Máy Tính
+                                    </div>
+                                    <div class="info-item">
+                                        <strong>🏫 Trường:</strong>
+                                        Đại học Công Nghệ - Đại học Quốc gia Hà Nội
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            </div>
-        </section>
+                </section>
             </div>
 
             <!-- Page 2: Projects -->
             <div class="page" id="page-2">
-                <!-- Projects Section -->
                 <section id="projects">
-            <h2>Danh Sách Bài Tập & Báo Cáo</h2>
-            <p><strong>💡 Nhấp vào mỗi bài để xem nội dung chi tiết</strong></p>
-            <p>Tổng cộng 6 báo cáo trong môn học, thể hiện kỹ năng hợp tác, ứng dụng AI, và tư duy phê phán:</p>
-            
-            <div class="accordion-container">
-                <!-- Bài 1 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="openDetailPage('page-1-detail')" style="cursor: pointer;">
-                        <div>
-                            <div class="accordion-title">
-                                <img src="Bai1_Picture.png" alt="Bai 1" class="accordion-title-image">
+                    <h2>Danh Sách Bài Tập & Báo Cáo</h2>
+                    <p><strong>💡 Nhấp vào mỗi bài để xem nội dung chi tiết</strong></p>
+                    <p>Tổng cộng 6 báo cáo trong môn học, thể hiện kỹ năng hợp tác, ứng dụng AI, và tư duy phê phán:</p>
+                    
+                    <div class="accordion-container">
+                        <!-- Bài 1 -->
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="openDetailPage('page-1-detail')" style="cursor: pointer;">
+                                <div>
+                                    <div class="accordion-title">
+                                        <img src="Bai1_Picture.png" alt="Bai 1" class="accordion-title-image">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p>
-                                <strong>Trình bày cấu trúc thư mục tối ưu và quy tắc đặt tên tệp đã thiết lập, kèm ảnh chụp minh họa.</strong>
-                            </p>
-                            <h4>📌 Mục tiêu bài tập</h4>
-                            <p>Hiểu cách tổ chức thư mục hợp lý và áp dụng quy tắc đặt tên tệp tin chuẩn để quản lý dữ liệu hiệu quả.</p>
-                            
-                            <h4>📂 Cấu Trúc Thư Mục Tối Ưu</h4>
-                            <ul>
-                                <li><strong>Phân tầng logic:</strong> Documents → Subjects → Assignment → Files</li>
-                                <li><strong>Tách biệt theo loại:</strong> Documents, Images, Videos, Projects</li>
-                                <li><strong>Archive cũ:</strong> Tạo thư mục Archive để lưu dữ liệu cũ</li>
-                            </ul>
-
-                            <h4>🏷️ Quy Tắc Đặt Tên Tệp</h4>
-                            <ul>
-                                <li><strong>Format:</strong> [Date]_[ProjectName]_[Description]_[Version].ext</li>
-                                <li><strong>Ví dụ:</strong> 2024-01-15_Report_Final_v2.docx</li>
-                                <li><strong>Quy tắc:</strong> Không dùng khoảng trắng (dùng _ hoặc -)</li>
-                                <li><strong>Rõ ràng:</strong> Tên file phải mô tả nội dung</li>
-                            </ul>
-
-                            <h4>🎯 Kết quả đạt được</h4>
-                            <ul>
-                                <li>Cấu trúc thư mục rõ ràng, dễ tìm kiếm</li>
-                                <li>Tiết kiệm thời gian khi truy cập tài liệu</li>
-                                <li>Quản lý phiên bản tệp một cách khoa học</li>
-                                <li>Dễ dàng chia sẻ và cộng tác với người khác</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bài 2 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="openDetailPage('page-2-detail')" style="cursor: pointer;">
-                        <div>
-                            <div class="accordion-title">
-                                <img src="Bai2_Picture.png" alt="Bai 2" class="accordion-title-image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p>
-                                <strong>Trình bày kết quả tìm kiếm học thuật bằng các toán tử nâng cao và bảng đánh giá nguồn đã thực hiện.</strong>
-                            </p>
-                            <h4>📌 Mục tiêu bài tập</h4>
-                            <p>Rèn luyện kỹ năng tìm kiếm tài liệu học thuật hiệu quả và đánh giá độ tin cậy các nguồn thông tin.</p>
-                            
-                            <h4>🔍 Toán Tử Tìm Kiếm Nâng Cao</h4>
-                            <ul>
-                                <li><strong>Quote ("...")</strong> - Tìm cụm từ chính xác</li>
-                                <li><strong>AND (+)</strong> - Tìm tất cả từ khóa</li>
-                                <li><strong>OR (|)</strong> - Tìm một trong các từ khóa</li>
-                                <li><strong>NOT (-)</strong> - Loại trừ từ khóa nào đó</li>
-                                <li><strong>Wildcard (*)</strong> - Tìm các biến thể từ</li>
-                                <li><strong>Parentheses ()</strong> - Nhóm các điều kiện tìm kiếm</li>
-                            </ul>
-
-                            <h4>📊 Bảng Tiêu Chí Đánh Giá Nguồn</h4>
-                            <ul>
-                                <li><strong>Uy Tín:</strong> Tác giả/xuất bản xã nào? Có bằng cấp chuyên môn?</li>
-                                <li><strong>Độ Mới:</strong> Xuất bản năm nào? Còn phù hợp với lĩnh vực?</li>
-                                <li><strong>Độ Tin Cậy:</strong> Có tham khảo, số liệu cụ thể không?</li>
-                                <li><strong>Mục Đích:</strong> Là nghiên cứu học thuật hay quảng cáo?</li>
-                                <li><strong>Độ Sâu:</strong> Phân tích chi tiết hay chỉ tổng hợp bề ngoài?</li>
-                            </ul>
-
-                            <h4>🎯 Kết quả đạt được</h4>
-                            <ul>
-                                <li>Tìm kiếm tài liệu nhanh chóng và chính xác</li>
-                                <li>Biết cách đánh giá chất lượng nguồn thông tin</li>
-                                <li>Xây dựng thư viện tài liệu uy tín cho bản thân</li>
-                                <li>Nâng cao kỹ năng nghiên cứu học thuật</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bài 3 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="openDetailPage('page-3-detail')" style="cursor: pointer;">
-                        <div>
-                            <div class="accordion-title">
-                                <img src="Bai3_Picture.png" alt="Bai 3" class="accordion-title-image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p>
-                                <strong>Trình bày sự so sánh giữa Prompt ban đầu và Prompt cải tiến cùng kết quả đầu ra từ AI.</strong>
-                            </p>
-                            <h4>📌 Mục tiêu bài tập</h4>
-                            <p>Nắm rõ cách viết prompt hiệu quả để tối ưu hóa output của AI cho các tác vụ học tập.</p>
-                            
-                            <h4>🔄 So Sánh Prompt Ban Đầu vs Prompt Cải Tiến</h4>
-                            <ul>
-                                <li><strong>Prompt Ban Đầu:</strong> "Explain machine learning" → Output: Chung chung, thiếu chi tiết</li>
-                                <li><strong>Prompt Cải Tiến:</strong> "Explain machine learning for beginners in 3 steps with examples" → Output: Rõ ràng, có cấu trúc</li>
-                            </ul>
-
-                            <h4>⚡ Kỹ Thuật Viết Prompt Hiệu Quả</h4>
-                            <ul>
-                                <li><strong>Role-Prompting:</strong> "You are a teacher. Explain...". Kết quả: Ngôn ngữ phù hợp, dễ hiểu</li>
-                                <li><strong>Chain-of-Thought:</strong> "Think step by step. First... Then...". Kết quả: Logic rõ ràng, sâu sắc</li>
-                                <li><strong>Few-Shot:</strong> "Here are examples... Now apply...". Kết quả: Đúng định dạng mong muốn</li>
-                                <li><strong>Constraints:</strong> "Maximum 100 words, bullet points". Kết quả: Output theo yêu cầu</li>
-                            </ul>
-
-                            <h4>💡 Các Phát Hiện Chính</h4>
-                            <ul>
-                                <li>Prompt chi tiết hơn → Output chất lượng hơn</li>
-                                <li>Cung cấp context giúp AI hiểu rõ hơn</li>
-                                <li>Yêu cầu cụ thể định dạng output rất hiệu quả</li>
-                                <li>Cho AI một vai trò cụ thể giúp tôi lại phong cách trả lời</li>
-                            </ul>
-
-                            <h4>🎯 Kết quả đạt được</h4>
-                            <ul>
-                                <li>Viết prompt để đạt kết quả mong muốn</li>
-                                <li>Tiết kiệm thời gian tương tác với AI</li>
-                                <li>Nhận output chất lượng cao ngay từ lần đầu</li>
-                                <li>Nâng cao kỹ năng giao tiếp với AI</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bài 4 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="openDetailPage('page-4-detail')" style="cursor: pointer;">
-                        <div>
-                            <div class="accordion-title">
-                                <img src="Bai4_Picture.png" alt="Bai 4" class="accordion-title-image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p>
-                                <strong>Trình bày minh chứng về việc sử dụng công cụ quản lý dự án nhóm và cách thức phối hợp trực tuyến.</strong>
-                            </p>
-                            <h4>📌 Mục tiêu bài tập</h4>
-                            <p>Thực hành sử dụng các công cụ cộng tác trực tuyến để quản lý dự án nhóm hiệu quả.</p>
-                            
-                            <h4>🛠️ Công Cụ Hợp Tác Được Sử Dụng</h4>
-                            <ul>
-                                <li><strong>Trello</strong> - Quản lý tác vụ, theo dõi tiến độ với Kanban board</li>
-                                <li><strong>Google Docs</strong> - Soạn thảo tài liệu cộng tác, comment, version history</li>
-                                <li><strong>Google Drive</strong> - Lưu trữ tập trung, chia sẻ quyền truy cập</li>
-                                <li><strong>Slack/Teams</strong> - Giao tiếp nhóm realtime, thông báo tức thời</li>
-                                <li><strong>Google Meet</strong> - Họp video, brainstorm, cập nhật tiến độ</li>
-                            </ul>
-
-                            <h4>📋 Cách Thức Phối Hợp</h4>
-                            <ul>
-                                <li><strong>Lập kế hoạch:</strong> Xác định mục tiêu, deadline, phân công rõ</li>
-                                <li><strong>Theo dõi:</strong> Cập nhật status hàng ngày, report tiến độ</li>
-                                <li><strong>Giao tiếp:</strong> Đặt câu hỏi, giải quyết vấn đề promptly</li>
-                                <li><strong>Đánh giá:</strong> Review kết quả, feedback, learning</li>
-                            </ul>
-
-                            <h4>📊 Kết Quả Hợp Tác</h4>
-                            <ul>
-                                <li>Hoàn thành dự án đúng hạn, chất lượng tốt</li>
-                                <li>Tăng hiệu quả làm việc nhóm</li>
-                                <li>Giảm nhầm lẫn, confustion do giao tiếp rõ ràng</li>
-                                <li>Tạo lịch sử dự án, dễ xem lại và học hỏi</li>
-                            </ul>
-
-                            <h4>🎯 Bài Học</h4>
-                            <ul>
-                                <li>Công cụ hợp tác đúng → Dự án thành công</li>
-                                <li>Giao tiếp rõ ràng rất quan trọng</li>
-                                <li>Phân công cụ thể, deadline rõ ràng là chìa khóa</li>
-                                <li>Lắng nghe và hỗ trợ lẫn nhau cải thiện chất lượng</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bài 5 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="openDetailPage('page-5-detail')" style="cursor: pointer;">
-                        <div>
-                            <div class="accordion-title">
-                                <img src="Bai5_Picture.png" alt="Bai 5" class="accordion-title-image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p>
-                                <strong>Trình bày sản phẩm nội dung số hoàn thiện (hình ảnh, video hoặc bài viết) được hỗ trợ bởi AI.</strong>
-                            </p>
-                            <h4>📌 Mục tiêu bài tập</h4>
-                            <p>Sáng tạo nội dung số chất lượng cao bằng cách kết hợp AI và kỹ năng con người.</p>
-                            
-                            <h4>🎨 Các Loại Nội Dung Sáng Tạo</h4>
-                            <ul>
-                                <li><strong>Hình ảnh:</strong> Dùng DALL-E, Midjourney, Stable Diffusion để tạo ảnh minh họa</li>
-                                <li><strong>Video:</strong> Dùng Synthesia, HeyGen để tạo avatar video, voice-over</li>
-                                <li><strong>Bài Viết:</strong> Dùng ChatGPT, Jasper để viết article, blog post</li>
-                                <li><strong>Audio:</strong> Dùng ElevenLabs, Google TTS để tạo voice-over</li>
-                                <li><strong>Thiết Kế:</strong> Dùng Canva AI, Adobe Firefly để thiết kế poster, banner</li>
-                            </ul>
-
-                            <h4>🔄 Quy Trình Sáng Tạo Nội Dung</h4>
-                            <ul>
-                                <li><strong>Bước 1: Lập ý tưởng</strong> - Xác định chủ đề, mục tiêu, đối tượng</li>
-                                <li><strong>Bước 2: Viết prompt</strong> - Mô tả chi tiết nội dung mong muốn cho AI</li>
-                                <li><strong>Bước 3: AI tạo</strong> - Sử dụng AI tools tạo nội dung ban đầu</li>
-                                <li><strong>Bước 4: Chỉnh sửa</strong> - Con người review, edit, cải tiến</li>
-                                <li><strong>Bước 5: Công bố</strong> - Xuất bản, chia sẻ kèm credit AI</li>
-                            </ul>
-
-                            <h4>✨ Kết Quả Nội Dung</h4>
-                            <ul>
-                                <li>Nội dung chất lượng cao, chuyên nghiệp</li>
-                                <li>Tạo nhanh hơn so với phương pháp truyền thống</li>
-                                <li>Nhiều lựa chọn, dễ customize theo ý muốn</li>
-                                <li>Tiết kiệm chi phí thuê designer, videographer</li>
-                            </ul>
-
-                            <h4>🎯 Bài Học</h4>
-                            <ul>
-                                <li>AI là công cụ sáng tạo, không thay thế con người</li>
-                                <li>Prompt chi tiết → Output tốt hơn</li>
-                                <li>Kết hợp AI + sáng tạo con người = tối ưu</li>
-                                <li>Luôn công bố khi sử dụng AI (transparency)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bài 6 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="openDetailPage('page-6-detail')" style="cursor: pointer;">
-                        <div>
-                            <div class="accordion-title">
-                                <img src="Bai6_Picture.png" alt="Bai 6" class="accordion-title-image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p>
-                                <strong>Trình bày bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm dựa trên các nghiên cứu đã thực hiện.</strong>
-                            </p>
-                            <h4>📌 Mục tiêu bài tập</h4>
-                            <p>Xây dựng bộ nguyên tắc đạo đức cá nhân cho việc sử dụng AI trong học tập và nghiên cứu.</p>
-                            
-                            <h4>⚖️ Năm Nguyên Tắc Cơ Bản</h4>
-                            <ul>
-                                <li><strong>1. Transparency (Minh Bạch):</strong> 
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        <strong>Trình bày cấu trúc thư mục tối ưu và quy tắc đặt tên tệp đã thiết lập, kèm ảnh chụp minh họa.</strong>
+                                    </p>
+                                    <h4>📌 Mục tiêu bài tập</h4>
+                                    <p>Hiểu cách tổ chức thư mục hợp lý và áp dụng quy tắc đặt tên tệp tin chuẩn để quản lý dữ liệu hiệu quả.</p>
+                                    
+                                    <h4>📂 Cấu Trúc Thư Mục Tối Ưu</h4>
                                     <ul>
-                                        <li>Công khai khi sử dụng AI trong bài tập, báo cáo</li>
-                                        <li>Ghi danh sách công cụ AI được sử dụng</li>
-                                        <li>Không giấu giếm hoặc trình bày AI output như chính mình tạo</li>
+                                        <li><strong>Phân tầng logic:</strong> Documents → Subjects → Assignment → Files</li>
+                                        <li><strong>Tách biệt theo loại:</strong> Documents, Images, Videos, Projects</li>
+                                        <li><strong>Archive cũ:</strong> Tạo thư mục Archive để lưu dữ liệu cũ</li>
                                     </ul>
-                                </li>
-                                <li><strong>2. Accountability (Chịu Trách Nhiệm):</strong> 
-                                    <ul>
-                                        <li>Chịu trách nhiệm cho output cuối cùng</li>
-                                        <li>Review kỹ kết quả từ AI trước khi nộp</li>
-                                        <li>Sửa lỗi, thiên lệch từ AI nếu phát hiện</li>
-                                    </ul>
-                                </li>
-                                <li><strong>3. Integrity (Chính Trực):</strong> 
-                                    <ul>
-                                        <li>Không sử dụng AI để gian lận, copy bài</li>
-                                        <li>AI là công cụ hỗ trợ, không thay thế học tập</li>
-                                        <li>Hiểu và giải thích được nội dung sử dụng AI</li>
-                                    </ul>
-                                </li>
-                                <li><strong>4. Independence (Độc Lập Tư Duy):</strong> 
-                                    <ul>
-                                        <li>Luôn suy nghĩ, phân tích độc lập</li>
-                                        <li>Không hoàn toàn phụ thuộc vào AI</li>
-                                        <li>Phát triển kỹ năng con người, không atrophy</li>
-                                    </ul>
-                                </li>
-                                <li><strong>5. Privacy (Bảo Vệ Riêng Tư):</strong> 
-                                    <ul>
-                                        <li>Không chia sẻ thông tin cá nhân cho AI</li>
-                                        <li>Cẩn thận với dữ liệu nhạy cảm khi input</li>
-                                        <li>Kiểm tra chính sách privacy của AI tool</li>
-                                    </ul>
-                                </li>
-                            </ul>
 
-                            <h4>🎓 Bộ Quy Tắc Thực Hành</h4>
-                            <ul>
-                                <li><strong>✅ Chấp Nhận Được:</strong> Dùng AI để brainstorm, viết outline, giải thích khái niệm khó</li>
-                                <li><strong>✅ Chấp Nhận Được:</strong> Dùng AI để review, edit, cải thiện bài viết</li>
-                                <li><strong>✅ Chấp Nhận Được:</strong> Dùng AI để tìm tài liệu, tóm tắt nội dung</li>
-                                <li><strong>❌ Không Chấp Nhận:</strong> Nộp AI output nguyên vẹn như là chính mình</li>
-                                <li><strong>❌ Không Chấp Nhận:</strong> Dùng AI để làm toàn bộ bài tập</li>
-                                <li><strong>❌ Không Chấp Nhận:</strong> Giấu giếm việc dùng AI</li>
-                            </ul>
+                                    <h4>🏷️ Quy Tắc Đặt Tên Tệp</h4>
+                                    <ul>
+                                        <li><strong>Format:</strong> [Date]_[ProjectName]_[Description]_[Version].ext</li>
+                                        <li><strong>Ví dụ:</strong> 2024-01-15_Report_Final_v2.docx</li>
+                                        <li><strong>Quy tắc:</strong> Không dùng khoảng trắng (dùng _ hoặc -)</li>
+                                        <li><strong>Rõ ràng:</strong> Tên file phải mô tả nội dung</li>
+                                    </ul>
 
-                            <h4>🎯 Lợi Ích của Nguyên Tắc Này</h4>
-                            <ul>
-                                <li>Phát triển kỹ năng thực sự, không lệ thuộc AI</li>
-                                <li>Xây dựng uy tín, không lo bị phát hiện gian lận</li>
-                                <li>Học cách sử dụng AI một cách khôn ngoan</li>
-                                <li>Chuẩn bị tốt cho tương lai khi AI phổ biến hơn</li>
-                            </ul>
+                                    <h4>🎯 Kết quả đạt được</h4>
+                                    <ul>
+                                        <li>Cấu trúc thư mục rõ ràng, dễ tìm kiếm</li>
+                                        <li>Tiết kiệm thời gian khi truy cập tài liệu</li>
+                                        <li>Quản lý phiên bản tệp một cách khoa học</li>
+                                        <li>Dễ dàng chia sẻ và cộng tác với người khác</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-                            <h4>💭 Kết Luận</h4>
-                            <p>AI là công cụ mạnh mẽ nhưng cần sử dụng có trách nhiệm. Không phải mọi cách dùng AI đều được chấp nhận, nhưng nếu tuân thủ nguyên tắc này, có thể sử dụng AI để tối ưu hóa học tập mà vẫn phát triển kỹ năng thực sự.</p>
+                        <!-- Bài 2 -->
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="openDetailPage('page-2-detail')" style="cursor: pointer;">
+                                <div>
+                                    <div class="accordion-title">
+                                        <img src="Bai2_Picture.png" alt="Bai 2" class="accordion-title-image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        <strong>Trình bày kết quả tìm kiếm học thuật bằng các toán tử nâng cao và bảng đánh giá nguồn đã thực hiện.</strong>
+                                    </p>
+                                    <h4>📌 Mục tiêu bài tập</h4>
+                                    <p>Rèn luyện kỹ năng tìm kiếm tài liệu học thuật hiệu quả và đánh giá độ tin cậy các nguồn thông tin.</p>
+                                    
+                                    <h4>🔍 Toán Tử Tìm Kiếm Nâng Cao</h4>
+                                    <ul>
+                                        <li><strong>Quote ("...")</strong> - Tìm cụm từ chính xác</li>
+                                        <li><strong>AND (+)</strong> - Tìm tất cả từ khóa</li>
+                                        <li><strong>OR (|)</strong> - Tìm một trong các từ khóa</li>
+                                        <li><strong>NOT (-)</strong> - Loại trừ từ khóa nào đó</li>
+                                        <li><strong>Wildcard (*)</strong> - Tìm các biến thể từ</li>
+                                        <li><strong>Parentheses ()</strong> - Nhóm các điều kiện tìm kiếm</li>
+                                    </ul>
+
+                                    <h4>📊 Bảng Tiêu Chí Đánh Giá Nguồn</h4>
+                                    <ul>
+                                        <li><strong>Uy Tín:</strong> Tác giả/xuất bản xã nào? Có bằng cấp chuyên môn?</li>
+                                        <li><strong>Độ Mới:</strong> Xuất bản năm nào? Còn phù hợp với lĩnh vực?</li>
+                                        <li><strong>Độ Tin Cậy:</strong> Có tham khảo, số liệu cụ thể không?</li>
+                                        <li><strong>Mục Đích:</strong> Là nghiên cứu học thuật hay quảng cáo?</li>
+                                        <li><strong>Độ Sâu:</strong> Phân tích chi tiết hay chỉ tổng hợp bề ngoài?</li>
+                                    </ul>
+
+                                    <h4>🎯 Kết quả đạt được</h4>
+                                    <ul>
+                                        <li>Tìm kiếm tài liệu nhanh chóng và chính xác</li>
+                                        <li>Biết cách đánh giá chất lượng nguồn thông tin</li>
+                                        <li>Xây dựng thư viện tài liệu uy tín cho bản thân</li>
+                                        <li>Nâng cao kỹ năng nghiên cứu học thuật</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bài 3 -->
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="openDetailPage('page-3-detail')" style="cursor: pointer;">
+                                <div>
+                                    <div class="accordion-title">
+                                        <img src="Bai3_Picture.png" alt="Bai 3" class="accordion-title-image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        <strong>Trình bày sự so sánh giữa Prompt ban đầu và Prompt cải tiến cùng kết quả đầu ra từ AI.</strong>
+                                    </p>
+                                    <h4>📌 Mục tiêu bài tập</h4>
+                                    <p>Nắm rõ cách viết prompt hiệu quả để tối ưu hóa output của AI cho các tác vụ học tập.</p>
+                                    
+                                    <h4>🔄 So Sánh Prompt Ban Đầu vs Prompt Cải Tiến</h4>
+                                    <ul>
+                                        <li><strong>Prompt Ban Đầu:</strong> "Explain machine learning" → Output: Chung chung, thiếu chi tiết</li>
+                                        <li><strong>Prompt Cải Tiến:</strong> "Explain machine learning for beginners in 3 steps with examples" → Output: Rõ ràng, có cấu trúc</li>
+                                    </ul>
+
+                                    <h4>⚡ Kỹ Thuật Viết Prompt Hiệu Quả</h4>
+                                    <ul>
+                                        <li><strong>Role-Prompting:</strong> "You are a teacher. Explain...". Kết quả: Ngôn ngữ phù hợp, dễ hiểu</li>
+                                        <li><strong>Chain-of-Thought:</strong> "Think step by step. First... Then...". Kết quả: Logic rõ ràng, sâu sắc</li>
+                                        <li><strong>Few-Shot:</strong> "Here are examples... Now apply...". Kết quả: Đúng định dạng mong muốn</li>
+                                        <li><strong>Constraints:</strong> "Maximum 100 words, bullet points". Kết quả: Output theo yêu cầu</li>
+                                    </ul>
+
+                                    <h4>💡 Các Phát Hiện Chính</h4>
+                                    <ul>
+                                        <li>Prompt chi tiết hơn → Output chất lượng hơn</li>
+                                        <li>Cung cấp context giúp AI hiểu rõ hơn</li>
+                                        <li>Yêu cầu cụ thể định dạng output rất hiệu quả</li>
+                                        <li>Cho AI một vai trò cụ thể giúp tôi lại phong cách trả lời</li>
+                                    </ul>
+
+                                    <h4>🎯 Kết quả đạt được</h4>
+                                    <ul>
+                                        <li>Viết prompt để đạt kết quả mong muốn</li>
+                                        <li>Tiết kiệm thời gian tương tác với AI</li>
+                                        <li>Nhận output chất lượng cao ngay từ lần đầu</li>
+                                        <li>Nâng cao kỹ năng giao tiếp với AI</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bài 4 -->
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="openDetailPage('page-4-detail')" style="cursor: pointer;">
+                                <div>
+                                    <div class="accordion-title">
+                                        <img src="Bai4_Picture.png" alt="Bai 4" class="accordion-title-image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        <strong>Trình bày minh chứng về việc sử dụng công cụ quản lý dự án nhóm và cách thức phối hợp trực tuyến.</strong>
+                                    </p>
+                                    <h4>📌 Mục tiêu bài tập</h4>
+                                    <p>Thực hành sử dụng các công cụ cộng tác trực tuyến để quản lý dự án nhóm hiệu quả.</p>
+                                    
+                                    <h4>🛠️ Công Cụ Hợp Tác Được Sử Dụng</h4>
+                                    <ul>
+                                        <li><strong>Trello</strong> - Quản lý tác vụ, theo dõi tiến độ với Kanban board</li>
+                                        <li><strong>Google Docs</strong> - Soạn thảo tài liệu cộng tác, comment, version history</li>
+                                        <li><strong>Google Drive</strong> - Lưu trữ tập trung, chia sẻ quyền truy cập</li>
+                                        <li><strong>Slack/Teams</strong> - Giao tiếp nhóm realtime, thông báo tức thời</li>
+                                        <li><strong>Google Meet</strong> - Họp video, brainstorm, cập nhật tiến độ</li>
+                                    </ul>
+
+                                    <h4>📋 Cách Thức Phối Hợp</h4>
+                                    <ul>
+                                        <li><strong>Lập kế hoạch:</strong> Xác định mục tiêu, deadline, phân công rõ</li>
+                                        <li><strong>Theo dõi:</strong> Cập nhật status hàng ngày, report tiến độ</li>
+                                        <li><strong>Giao tiếp:</strong> Đặt câu hỏi, giải quyết vấn đề promptly</li>
+                                        <li><strong>Đánh giá:</strong> Review kết quả, feedback, learning</li>
+                                    </ul>
+
+                                    <h4>📊 Kết Quả Hợp Tác</h4>
+                                    <ul>
+                                        <li>Hoàn thành dự án đúng hạn, chất lượng tốt</li>
+                                        <li>Tăng hiệu quả làm việc nhóm</li>
+                                        <li>Giảm nhầm lẫn, confustion do giao tiếp rõ ràng</li>
+                                        <li>Tạo lịch sử dự án, dễ xem lại và học hỏi</li>
+                                    </ul>
+
+                                    <h4>🎯 Bài Học</h4>
+                                    <ul>
+                                        <li>Công cụ hợp tác đúng → Dự án thành công</li>
+                                        <li>Giao tiếp rõ ràng rất quan trọng</li>
+                                        <li>Phân công cụ thể, deadline rõ ràng là chìa khóa</li>
+                                        <li>Lắng nghe và hỗ trợ lẫn nhau cải thiện chất lượng</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bài 5 -->
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="openDetailPage('page-5-detail')" style="cursor: pointer;">
+                                <div>
+                                    <div class="accordion-title">
+                                        <img src="Bai5_Picture.png" alt="Bai 5" class="accordion-title-image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        <strong>Trình bày sản phẩm nội dung số hoàn thiện (hình ảnh, video hoặc bài viết) được hỗ trợ bởi AI.</strong>
+                                    </p>
+                                    <h4>📌 Mục tiêu bài tập</h4>
+                                    <p>Sáng tạo nội dung số chất lượng cao bằng cách kết hợp AI và kỹ năng con người.</p>
+                                    
+                                    <h4>🎨 Các Loại Nội Dung Sáng Tạo</h4>
+                                    <ul>
+                                        <li><strong>Hình ảnh:</strong> Dùng DALL-E, Midjourney, Stable Diffusion để tạo ảnh minh họa</li>
+                                        <li><strong>Video:</strong> Dùng Synthesia, HeyGen để tạo avatar video, voice-over</li>
+                                        <li><strong>Bài Viết:</strong> Dùng ChatGPT, Jasper để viết article, blog post</li>
+                                        <li><strong>Audio:</strong> Dùng ElevenLabs, Google TTS để tạo voice-over</li>
+                                        <li><strong>Thiết Kế:</strong> Dùng Canva AI, Adobe Firefly để thiết kế poster, banner</li>
+                                    </ul>
+
+                                    <h4>🔄 Quy Trình Sáng Tạo Nội Dung</h4>
+                                    <ul>
+                                        <li><strong>Bước 1: Lập ý tưởng</strong> - Xác định chủ đề, mục tiêu, đối tượng</li>
+                                        <li><strong>Bước 2: Viết prompt</strong> - Mô tả chi tiết nội dung mong muốn cho AI</li>
+                                        <li><strong>Bước 3: AI tạo</strong> - Sử dụng AI tools tạo nội dung ban đầu</li>
+                                        <li><strong>Bước 4: Chỉnh sửa</strong> - Con người review, edit, cải tiến</li>
+                                        <li><strong>Bước 5: Công bố</strong> - Xuất bản, chia sẻ kèm credit AI</li>
+                                    </ul>
+
+                                    <h4>✨ Kết Quả Nội Dung</h4>
+                                    <ul>
+                                        <li>Nội dung chất lượng cao, chuyên nghiệp</li>
+                                        <li>Tạo nhanh hơn so với phương pháp truyền thống</li>
+                                        <li>Nhiều lựa chọn, dễ customize theo ý muốn</li>
+                                        <li>Tiết kiệm chi phí thuê designer, videographer</li>
+                                    </ul>
+
+                                    <h4>🎯 Bài Học</h4>
+                                    <ul>
+                                        <li>AI là công cụ sáng tạo, không thay thế con người</li>
+                                        <li>Prompt chi tiết → Output tốt hơn</li>
+                                        <li>Kết hợp AI + sáng tạo con người = tối ưu</li>
+                                        <li>Luôn công bố khi sử dụng AI (transparency)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bài 6 -->
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="openDetailPage('page-6-detail')" style="cursor: pointer;">
+                                <div>
+                                    <div class="accordion-title">
+                                        <img src="Bai6_Picture.png" alt="Bai 6" class="accordion-title-image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        <strong>Trình bày bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm dựa trên các nghiên cứu đã thực hiện.</strong>
+                                    </p>
+                                    <h4>📌 Mục tiêu bài tập</h4>
+                                    <p>Xây dựng bộ nguyên tắc đạo đức cá nhân cho việc sử dụng AI trong học tập và nghiên cứu.</p>
+                                    
+                                    <h4>⚖️ Năm Nguyên Tắc Cơ Bản</h4>
+                                    <ul>
+                                        <li><strong>1. Transparency (Minh Bạch):</strong> 
+                                            <ul>
+                                                <li>Công khai khi sử dụng AI trong bài tập, báo cáo</li>
+                                                <li>Ghi danh sách công cụ AI được sử dụng</li>
+                                                <li>Không giấu giếm hoặc trình bày AI output như chính mình tạo</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>2. Accountability (Chịu Trách Nhiệm):</strong> 
+                                            <ul>
+                                                <li>Chịu trách nhiệm cho output cuối cùng</li>
+                                                <li>Review kỹ kết quả từ AI trước khi nộp</li>
+                                                <li>Sửa lỗi, thiên lệch từ AI nếu phát hiện</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>3. Integrity (Chính Trực):</strong> 
+                                            <ul>
+                                                <li>Không sử dụng AI để gian lận, copy bài</li>
+                                                <li>AI là công cụ hỗ trợ, không thay thế học tập</li>
+                                                <li>Hiểu và giải thích được nội dung sử dụng AI</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>4. Independence (Độc Lập Tư Duy):</strong> 
+                                            <ul>
+                                                <li>Luôn suy nghĩ, phân tích độc lập</li>
+                                                <li>Không hoàn toàn phụ thuộc vào AI</li>
+                                                <li>Phát triển kỹ năng con người, không atrophy</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>5. Privacy (Bảo Vệ Riêng Tư):</strong> 
+                                            <ul>
+                                                <li>Không chia sẻ thông tin cá nhân cho AI</li>
+                                                <li>Cẩn thận với dữ liệu nhạy cảm khi input</li>
+                                                <li>Kiểm tra chính sách privacy của AI tool</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <h4>🎓 Bộ Quy Tắc Thực Hành</h4>
+                                    <ul>
+                                        <li><strong>✅ Chấp Nhận Được:</strong> Dùng AI để brainstorm, viết outline, giải thích khái niệm khó</li>
+                                        <li><strong>✅ Chấp Nhận Được:</strong> Dùng AI để review, edit, cải thiện bài viết</li>
+                                        <li><strong>✅ Chấp Nhận Được:</strong> Dùng AI để tìm tài liệu, tóm tắt nội dung</li>
+                                        <li><strong>❌ Không Chấp Nhận:</strong> Nộp AI output nguyên vẹn như là chính mình</li>
+                                        <li><strong>❌ Không Chấp Nhận:</strong> Dùng AI để làm toàn bộ bài tập</li>
+                                        <li><strong>❌ Không Chấp Nhận:</strong> Giấu giếm việc dùng AI</li>
+                                    </ul>
+
+                                    <h4>🎯 Lợi Ích của Nguyên Tắc Này</h4>
+                                    <ul>
+                                        <li>Phát triển kỹ năng thực sự, không lệ thuộc AI</li>
+                                        <li>Xây dựng uy tín, không lo bị phát hiện gian lận</li>
+                                        <li>Học cách sử dụng AI một cách khôn ngoan</li>
+                                        <li>Chuẩn bị tốt cho tương lai khi AI phổ biến hơn</li>
+                                    </ul>
+
+                                    <h4>💭 Kết Luận</h4>
+                                    <p>AI là công cụ mạnh mẽ nhưng cần sử dụng có trách nhiệm. Không phải mọi cách dùng AI đều được chấp nhận, nhưng nếu tuân thủ nguyên tắc này, có thể sử dụng AI để tối ưu hóa học tập mà vẫn phát triển kỹ năng thực sự.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
-        </section>
-            </div>
 
-            <!-- Page 1 Detail: Bài Thực Hành -->
+            <!-- Page 1 Detail: Bài 1 -->
             <div class="page" id="page-1-detail">
                 <section style="padding: 20px 0 40px 0;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 20px;">
@@ -1426,7 +1343,7 @@
                 </section>
             </div>
 
-            <!-- Page 4 Detail: Bài 3 -->
+            <!-- Page 3 Detail: Bài 3 -->
             <div class="page" id="page-3-detail">
                 <section style="padding: 20px 0 40px 0;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 20px;">
@@ -1455,7 +1372,7 @@
                 </section>
             </div>
 
-            <!-- Page 5 Detail: Bài 4 -->
+            <!-- Page 4 Detail: Bài 4 -->
             <div class="page" id="page-4-detail">
                 <section style="padding: 20px 0 40px 0;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 20px;">
@@ -1484,7 +1401,7 @@
                 </section>
             </div>
 
-            <!-- Page 6 Detail: Bài 5 -->
+            <!-- Page 5 Detail: Bài 5 -->
             <div class="page" id="page-5-detail">
                 <section style="padding: 20px 0 40px 0;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 20px;">
@@ -1513,7 +1430,7 @@
                 </section>
             </div>
 
-            <!-- Page 7 Detail: Bài 6 -->
+            <!-- Page 6 Detail: Bài 6 -->
             <div class="page" id="page-6-detail">
                 <section style="padding: 20px 0 40px 0;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 20px;">
@@ -1544,32 +1461,31 @@
 
             <!-- Page 3: Summary -->
             <div class="page" id="page-3">
-                <!-- Summary Section -->
                 <section id="summary">
-            <h2>Tổng Kết & Cảm Nhận</h2>
-            <div class="summary-content">
-                <h3>🎓 Những Bài Học Quý Báu</h3>
-                
-                <div class="reflection-box">
-                    <p>Thông qua chuỗi bài tập thực hành mang tính thực tiễn cao, tôi đã có cơ hội tiếp cận toàn diện với nhiều khía cạnh cốt lõi của công nghệ, từ các kỹ năng thao tác nền tảng đến tư duy hệ thống nâng cao. Mỗi học phần không chỉ trang bị cho tôi những tri thức giá trị, mà còn đặt nền móng vững chắc cho lộ trình phát triển sự nghiệp lâu dài trong tương lai.</p>
-                </div>
+                    <h2>Tổng Kết & Cảm Nhận</h2>
+                    <div class="summary-content">
+                        <h3>🎓 Những Bài Học Quý Báu</h3>
+                        
+                        <div class="reflection-box">
+                            <p>Thông qua chuỗi bài tập thực hành mang tính thực tiễn cao, tôi đã có cơ hội tiếp cận toàn diện với nhiều khía cạnh cốt lõi của công nghệ, từ các kỹ năng thao tác nền tảng đến tư duy hệ thống nâng cao. Mỗi học phần không chỉ trang bị cho tôi những tri thức giá trị, mà còn đặt nền móng vững chắc cho lộ trình phát triển sự nghiệp lâu dài trong tương lai.</p>
+                        </div>
 
-                <div class="reflection-box">
-                    <p><strong>Các năng lực cốt lõi đã định hình:</strong><br>Tư duy phân tích hệ thống, kỹ năng quản trị và giải quyết các tình huống kỹ thuật phức tạp, năng lực cộng tác trực tuyến và giao tiếp hiệu quả đa nền tảng. Đặc biệt, tôi đã làm chủ kỹ thuật tối ưu hóa câu lệnh (Prompt Engineering), đồng thời hình thành nhận thức sâu sắc về việc ứng dụng AI một cách sáng tạo và có trách nhiệm.</p>
-                </div>
+                        <div class="reflection-box">
+                            <p><strong>Các năng lực cốt lõi đã định hình:</strong><br>Tư duy phân tích hệ thống, kỹ năng quản trị và giải quyết các tình huống kỹ thuật phức tạp, năng lực cộng tác trực tuyến và giao tiếp hiệu quả đa nền tảng. Đặc biệt, tôi đã làm chủ kỹ thuật tối ưu hóa câu lệnh (Prompt Engineering), đồng thời hình thành nhận thức sâu sắc về việc ứng dụng AI một cách sáng tạo và có trách nhiệm.</p>
+                        </div>
 
-                <div class="reflection-box">
-                    <p><strong>Đối diện thách thức &amp; Trưởng thành:</strong><br>Thực tế triển khai dự án không phải lúc nào cũng thuận lợi, nhưng chính những rào cản và lỗi hệ thống phát sinh đã rèn luyện cho tôi tinh thần kiên trì, kích thích tư duy sáng tạo độc lập và định hình thói quen luôn tìm kiếm giải pháp tối ưu nhất cho mọi vấn đề.</p>
-                </div>
+                        <div class="reflection-box">
+                            <p><strong>Đối diện thách thức &amp; Trưởng thành:</strong><br>Thực tế triển khai dự án không phải lúc nào cũng thuận lợi, nhưng chính những rào cản và lỗi hệ thống phát sinh đã rèn luyện cho tôi tinh thần kiên trì, kích thích tư duy sáng tạo độc lập và định hình thói quen luôn tìm kiếm giải pháp tối ưu nhất cho mọi vấn đề.</p>
+                        </div>
 
-                <div class="contact-links">
-                    <a href="mailto:student25022039@example.com" class="contact-link">📧 Email</a>
-                    <a href="#" class="contact-link">💼 LinkedIn</a>
-                    <a href="#" class="contact-link">🐙 GitHub</a>
-                    <a href="#" class="contact-link">🌐 Website</a>
-                </div>
-            </div>
-        </section>
+                        <div class="contact-links">
+                            <a href="mailto:student25022039@example.com" class="contact-link">📧 Email</a>
+                            <a href="#" class="contact-link">💼 LinkedIn</a>
+                            <a href="#" class="contact-link">🐙 GitHub</a>
+                            <a href="#" class="contact-link">🌐 Website</a>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
 
@@ -1595,71 +1511,42 @@
     </footer>
 
     <script>
+        // ---------- Preload all 6 images immediately on page load (no loading screen) ----------
+        const imageSources = [
+            'Bai1_Picture.png',
+            'Bai2_Picture.png',
+            'Bai3_Picture.png',
+            'Bai4_Picture.png',
+            'Bai5_Picture.png',
+            'Bai6_Picture.png'
+        ];
+
+        // Start preloading in background as soon as possible
+        imageSources.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
         // Page Navigation
         let currentPage = 1;
         const totalPages = 3;
 
-        let page2ImagesReady = false;
-        let page2ImagesPromise = null;
-
-        function preloadPage2Images() {
-            if (page2ImagesPromise) return page2ImagesPromise;
-
-            const sources = [
-                'Bai1_Picture.png',
-                'Bai2_Picture.png',
-                'Bai3_Picture.png',
-                'Bai4_Picture.png',
-                'Bai5_Picture.png',
-                'Bai6_Picture.png'
-            ];
-
-            page2ImagesPromise = Promise.all(
-                sources.map(src => new Promise(resolve => {
-                    const img = new Image();
-                    img.onload = resolve;
-                    img.onerror = resolve;
-                    img.src = src;
-                }))
-            ).then(() => {
-                page2ImagesReady = true;
-            });
-
-            return page2ImagesPromise;
-        }
-
-        function setLoading(active) {
-            const overlay = document.getElementById('loadingOverlay');
-            if (!overlay) return;
-            overlay.classList.toggle('active', active);
-        }
-
         function showPage(pageNum) {
-            if (pageNum === 2 && !page2ImagesReady) {
-                setLoading(true);
-                preloadPage2Images().then(() => {
-                    setLoading(false);
-                    showPage(pageNum);
-                });
-                return;
-            }
-
             // Hide all pages
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
 
             // Show selected page
-            document.getElementById(`page-${pageNum}`).classList.add('active');
+            const targetPage = document.getElementById(`page-${pageNum}`);
+            if (targetPage) targetPage.classList.add('active');
 
-            // Update page indicator
+            // Update page indicator and button states
             document.getElementById('currentPage').textContent = pageNum;
+            document.getElementById('prevBtn').disabled = (pageNum === 1);
+            document.getElementById('nextBtn').disabled = (pageNum === totalPages);
 
-            // Update button states
-            document.getElementById('prevBtn').disabled = pageNum === 1;
-            document.getElementById('nextBtn').disabled = pageNum === totalPages;
-
-            // Scroll to top
+            // Smooth scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -1677,7 +1564,7 @@
             }
         }
 
-        // Detail Page Navigation
+        // Detail Page Navigation (without any loading delay)
         function openDetailPage(pageId) {
             // Hide all pages
             document.querySelectorAll('.page').forEach(page => {
@@ -1685,57 +1572,37 @@
             });
 
             // Show detail page
-            document.getElementById(pageId).classList.add('active');
+            const detailPage = document.getElementById(pageId);
+            if (detailPage) detailPage.classList.add('active');
 
-            // Hide pagination controls
-            document.querySelector('.pagination').style.display = 'none';
+            // Hide pagination controls when viewing details
+            const paginationDiv = document.querySelector('.pagination');
+            if (paginationDiv) paginationDiv.style.display = 'none';
 
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function backToList() {
-            // Show pagination controls
-            document.querySelector('.pagination').style.display = 'flex';
+            // Show pagination controls again
+            const paginationDiv = document.querySelector('.pagination');
+            if (paginationDiv) paginationDiv.style.display = 'flex';
 
-            // Return to page 2 (projects)
+            // Return to page 2 (projects list)
             currentPage = 2;
             showPage(currentPage);
         }
 
-        // Keyboard navigation
+        // Keyboard navigation (only when pagination visible)
         document.addEventListener('keydown', (e) => {
-            if (document.querySelector('.pagination').style.display !== 'none') {
+            const paginationDiv = document.querySelector('.pagination');
+            if (paginationDiv && paginationDiv.style.display !== 'none') {
                 if (e.key === 'ArrowRight') nextPage();
                 if (e.key === 'ArrowLeft') previousPage();
             }
         });
 
-        // Accordion Toggle
-        function toggleAccordion(header) {
-            // Lấy nội dung accordion
-            const content = header.nextElementSibling;
-            const isActive = content.classList.contains('active');
-
-            // Đóng tất cả accordion khác
-            document.querySelectorAll('.accordion-content.active').forEach(item => {
-                if (item !== content) {
-                    item.classList.remove('active');
-                    item.previousElementSibling.classList.remove('active');
-                }
-            });
-
-            // Toggle accordion hiện tại
-            header.classList.toggle('active');
-            content.classList.toggle('active');
-
-            // Smooth scroll nếu cần
-            if (!isActive) {
-                setTimeout(() => {
-                    header.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
-            }
-        }
+        // Synchronize currentPage with actual visible page on startup
+        // No loading overlay ever appears.
     </script>
 </body>
 </html>
